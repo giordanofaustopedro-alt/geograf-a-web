@@ -1,0 +1,307 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Geografía - Argentina</title>
+  <style>
+    :root{--space:#0b5d44;--space2:#12815b;--text:#e6fff6;--muted:#cff7df;--blue:#0ea5e9;--green:#22c55e;--teal:#2dd4bf;--card:#0f3f2f;--edge:rgba(255,255,255,0.12)}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial;color:var(--text);background:linear-gradient(180deg,var(--space),var(--space2));line-height:1.6}
+    a{text-decoration:none;color:var(--teal)}
+    .header{position:sticky;top:0;z-index:40;background:rgba(5,19,26,.6);backdrop-filter:blur(8px);border-bottom:1px solid var(--edge)}
+    .nav{max-width:1200px;margin:0 auto;padding:.75rem 1rem;display:flex;align-items:center;justify-content:space-between}
+    .logo{font-weight:800;color:var(--teal)}
+    .nav-links{display:flex;gap:.75rem;list-style:none;margin:0;padding:0}
+    .nav-links a{color:var(--muted);padding:.45rem .6rem;border-radius:8px}
+    .nav-links a:hover{background:rgba(255,255,255,.06);color:var(--text)}
+    .hero{padding:3.5rem 1rem 2rem;text-align:center;position:relative;overflow:hidden}
+    .space{position:absolute;inset:0;background:radial-gradient(2px 2px at 20% 30%, rgba(255,255,255,.8), transparent 60%),radial-gradient(1.6px 1.6px at 70% 40%, rgba(255,255,255,.7), transparent 55%),radial-gradient(1.8px 1.8px at 40% 80%, rgba(255,255,255,.8), transparent 60%),radial-gradient(1.2px 1.2px at 85% 20%, rgba(255,255,255,.7), transparent 55%),radial-gradient(2px 2px at 60% 70%, rgba(255,255,255,.9), transparent 60%),radial-gradient(1.4px 1.4px at 15% 85%, rgba(255,255,255,.7), transparent 60%);opacity:.18;transform:scale(1.2);animation:drift 40s linear infinite;pointer-events:none}
+    @keyframes drift{to{transform:scale(1.2) translateY(-20px)}}
+    .hero-content{max-width:940px;margin:0 auto;background:linear-gradient(180deg,rgba(255,255,255,.06),transparent);padding:2rem;border-radius:16px;box-shadow:0 10px 40px rgba(0,0,0,.5)}
+    .hero h2{margin:0 0 .5rem;font-size:1.8rem;color:var(--text);position:relative;z-index:5}
+    .hero p{margin:0 0 1rem;color:var(--muted)}
+    .planet-wrap{position:relative;width:420px;height:420px;margin:1rem auto 1.5rem}
+    .planet{position:absolute;inset:0;border-radius:50%;overflow:hidden;background:url('tierra-fondo.png') center/contain no-repeat;filter:drop-shadow(0 0 24px #22c55e);animation:spin 60s linear infinite;z-index:4}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .orbit{position:absolute;border-radius:50%;left:50%;top:50%;transform:translate(-50%,-50%);display:grid;place-items:center;animation:orbit 30s linear infinite;z-index:6}
+    .orbit-track{width:420px;height:420px}
+    @keyframes trail{from{transform:translate(-50%,-50%) rotate(0deg) translateY(-230px)}to{transform:translate(-50%,-50%) rotate(360deg) translateY(-230px)}}
+    .orb-btn{position:absolute;top:50%;left:50%;display:inline-flex;align-items:center;gap:.25rem;padding:.3rem .55rem;border-radius:999px;border:1px solid var(--edge);background:linear-gradient(180deg,rgba(8,29,36,.9),rgba(8,29,36,.6));color:var(--text);box-shadow:0 8px 26px rgba(0,0,0,.45);pointer-events:auto;z-index:7;animation:trail 24s linear infinite;white-space:nowrap;font-size:.85rem}
+    .orb-btn:hover{box-shadow:0 12px 30px rgba(0,0,0,.55)}
+    .orbit-track .orb-btn:nth-child(1){animation-delay:0s}
+    .orbit-track .orb-btn:nth-child(2){animation-delay:2.4s}
+    .orbit-track .orb-btn:nth-child(3){animation-delay:4.8s}
+    .orbit-track .orb-btn:nth-child(4){animation-delay:7.2s}
+    .orbit-track .orb-btn:nth-child(5){animation-delay:9.6s}
+    .orbit-track .orb-btn:nth-child(6){animation-delay:12s}
+    .orbit-track .orb-btn:nth-child(7){animation-delay:14.4s}
+    .orbit-track .orb-btn:nth-child(8){animation-delay:16.8s}
+    .orbit-track .orb-btn:nth-child(9){animation-delay:19.2s}
+    .orbit-track .orb-btn:nth-child(10){animation-delay:21.6s}
+    .cta-row{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem;margin-top:1rem}
+    .cta{display:inline-block;background:#118ab2;color:#fff;padding:.6rem 1rem;border-radius:12px;font-weight:700;border:1px solid var(--edge)}
+    .container{max-width:1100px;margin:0 auto;padding:0 1rem}
+    .section{padding:2.5rem 0}
+    .section h2{font-size:1.6rem;margin:0 0 .75rem;color:var(--teal)}
+    .section p{color:var(--muted)}
+    .card-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;margin-top:1rem}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid var(--edge);border-radius:14px;padding:1rem;box-shadow:0 10px 40px rgba(0,0,0,.5);transform:translateY(20px);opacity:.0;transition:transform 320ms ease, opacity 320ms ease}
+    .card h3{margin:0 0 .5rem;color:#d6fff6}
+    .card.in-view{transform:translateY(0);opacity:1}
+    .media{width:100%;border-radius:12px;border:1px solid var(--edge);box-shadow:0 6px 18px rgba(0,0,0,.45)}
+    .video{position:relative;padding-top:56.25%;border-radius:12px;overflow:hidden;border:1px solid var(--edge);background:rgba(0,0,0,.2)}
+    .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+    .yt-preview{position:relative;padding-top:56.25%;border-radius:12px;overflow:hidden;border:1px solid var(--edge);background:#000;cursor:pointer;background-size:cover;background-position:center}
+    .yt-preview::after{content:'▶';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:40px;color:#fff;background:rgba(0,0,0,.5);border-radius:50%;padding:.4rem .7rem;box-shadow:0 6px 18px rgba(0,0,0,.45)}
+    footer{padding:1rem;text-align:center;color:var(--muted);border-top:1px solid var(--edge)}
+    @media(max-width:900px){.card-grid{grid-template-columns:1fr}.nav-links{display:none}.planet-wrap{width:320px;height:320px}.orbit-track{width:320px;height:320px}@keyframes trailM{from{transform:translate(-50%,-50%) rotate(0deg) translateY(-185px)}to{transform:translate(-50%,-50%) rotate(360deg) translateY(-185px)}}.orbit-track .orb-btn{animation:trailM 24s linear infinite}}
+  </style>
+</head>
+<body>
+  <header class="header">
+    <nav class="nav">
+      <h1 class="logo">Planeta — Geografía</h1>
+      <ul class="nav-links" role="menubar">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#bicontinental">Bicontinental</a></li>
+        <li><a href="#agroexportador">Agroexportador</a></li>
+        <li><a href="#isi">ISI</a></li>
+        <li><a href="#censos">Censo 2022</a></li>
+        <li><a href="#fronteras">Fronteras</a></li>
+        <li><a href="#gemelas">Ciudades Gemelas</a></li>
+        <li><a href="#globalizacion">Globalización</a></li>
+        <li><a href="#neoliberal">Neoliberal</a></li>
+        <li><a href="#mercosur">Mercosur</a></li>
+        <li><a href="#onu">ONU</a></li>
+      </ul>
+      <a class="cta" href="#bicontinental">Explorar</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="inicio" class="hero">
+      <div class="space"></div>
+      <div class="hero-content container">
+        <h2>Explorando Argentina desde el planeta</h2>
+        <p>Elige una temática en los botones que orbitan el planeta.</p>
+        <div class="planet-wrap">
+          <div class="planet"></div>
+          <div class="orbit orbit-track">
+            <a class="orb-btn" href="#agroexportador">Agroexportador</a>
+            <a class="orb-btn" href="#isi">ISI</a>
+            <a class="orb-btn" href="#bicontinental">Bicontinentalidad</a>
+            <a class="orb-btn" href="#censos">Censo 2022</a>
+            <a class="orb-btn" href="#fronteras">Fronteras</a>
+            <a class="orb-btn" href="#gemelas">Gemelas</a>
+            <a class="orb-btn" href="#globalizacion">Globalización</a>
+            <a class="orb-btn" href="#neoliberal">Neoliberal</a>
+            <a class="orb-btn" href="#mercosur">Mercosur</a>
+            <a class="orb-btn" href="#onu">ONU</a>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+    <section id="bicontinental" class="section">
+      <div class="container">
+        <h2>Argentina Bicontinental</h2>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Argentina_Bicontinental.png/640px-Argentina_Bicontinental.png" alt="Mapa Bicontinental" style="width:100%;border-radius:12px;margin:1rem 0;box-shadow:0 6px 18px rgba(0,0,0,0.45);">
+        <div class="card-grid">
+          <article class="card">
+            <h3>Concepto y alcance</h3>
+            <p>Argentina es bicontinental porque posee territorio continental en Sudamérica y una porción antártica reclamada (sector antártico). Además incluye islas subantárticas y de ultramar, que expanden su dominio marítimo y espacial.</p>
+            <p>En términos prácticos esto influye en: la superficie total, la zona económica exclusiva (ZEE), y la representación política y científica en la Antártida (bases, investigación y convenios internacionales).</p>
+          </article>
+          <article class="card">
+            <h3>Implicaciones geopolíticas</h3>
+            <p>La condición bicontinental tiene impacto en la política exterior, en la defensa y en la cooperación internacional. La administración del territorio antártico se sujeta al Tratado Antártico (1959), que promueve la pesquisa científica y limita la explotación militar o comercial.</p>
+            <ul>
+              <li>Expansión de la ZEE — potencial pesquero y recursos marinos.</li>
+              <li>Presencia científica y logística en estaciones antárticas.</li>
+              <li>Compromisos internacionales sobre protección ambiental.</li>
+            </ul>
+          </article>
+          
+          <article class="card">
+            <h3>Solo el texto — Definición</h3>
+            <p>Con bicontinental se hace referencia a un país cuya soberanía o gobierno del territorio nacional se extiende por dos continentes (“bi” significa “dos”; “continental”, perteneciente o relativo a un continente geográfico).</p>
+          </article>
+          <article class="card">
+            <h3>Solo el texto — Explicación</h3>
+            <p>¿Qué significa que un país es bicontinental? Imagina que un país no está solo en un lugar, sino que tiene una parte en un continente y otra parte en otro, como si fuera una casa con un jardín en una calle y un garaje en la calle de al lado.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="agroexportador" class="section">
+      <div class="container">
+        <h2>Modelo Agroexportador</h2>
+        <div class="card-grid">
+          <article class="card">
+            <h3>Breve historia</h3>
+            <p>Entre fines del siglo XIX y las primeras décadas del siglo XX, Argentina consolidó un modelo económico centrado en la producción agropecuaria destinada a la exportación. El ferrocarril, la llegada masiva de inmigrantes y el acceso a mercados europeos impulsaron grandes latifundios y estancias orientadas al grano y la carne.</p>
+          </article>
+          <article class="card">
+            <h3>Video Modelo Agroexportador</h3>
+            <div class="video yt-preview" data-id="NHIEVKD0dUA"></div>
+          </article>
+          <article class="card">
+            <h3>Consecuencias económicas y sociales</h3>
+            <p>El auge agroexportador generó crecimiento rápido de la economía, pero también dependencia de la demanda externa y la fluctuación de precios internacionales. En el plano social se consolidaron estructuras de tenencia de la tierra y desigualdades regionales.</p>
+            <ul>
+              <li>Especialización productiva en pampas y llanuras.</li>
+              <li>Movilidad demográfica hacia centros urbanos y puertos.</li>
+              <li>Vulnerabilidad ante crisis internacionales (p. ej. 1929).</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="isi" class="section">
+      <div class="container">
+        <h2>Industrialización por Sustitución de Importaciones (ISI)</h2>
+        <div class="card-grid">
+          <article class="card">
+            <h3>Origen y objetivo</h3>
+            <p>La ISI surge a partir de la necesidad de proteger el mercado interno ante la caída de importaciones y la interrupción de suministros internacionales. El objetivo fue desarrollar industrias nacionales que sustituyeran bienes manufacturados importados, creando empleo industrial y encadenamientos productivos.</p>
+          </article>
+          <article class="card">
+            <h3>Límites y legado</h3>
+            <p>Si bien promovió la creación de una base industrial (textil, metalúrgica, alimentaria), la ISI se topó con problemas de escala, tecnología y dependencia de insumos importados. El legado incluye una industria local consolidada, junto con desafíos de competitividad que se expresaron en distintas crisis.</p>
+          </article>
+          <article class="card">
+            <h3>Video Explicativo ISI</h3>
+            <div class="video yt-preview" data-id="MKS5T9vGBgA"></div>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section id="censos" class="section">
+      <div class="container">
+        <h2>Censo 2022</h2>
+        <div class="card-grid">
+          <article class="card">
+            <h3>Resultados destacados</h3>
+            <p>El Censo Nacional de Población, Hogares y Viviendas 2022 actualizó la distribución demográfica del país, niveles de urbanización, composición de hogares y características de vivienda, aportando insumos esenciales para la planificación pública.</p>
+          </article>
+          <article class="card">
+            <h3>Aplicaciones</h3>
+            <p>Los datos del Censo 2022 se utilizan para asignación de recursos, actualización de marcos muestrales, diseño de políticas sociales, infraestructura y servicios, y para análisis de tendencias de movilidad y envejecimiento.</p>
+          </article>
+          <article class="card">
+            <h3>Video Censo 2022</h3>
+            <div class="video yt-preview" data-id="M4CM6UcasdA"></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="fronteras" class="section">
+      <div class="container">
+        <h2>Fronteras</h2>
+        <div class="card-grid">
+          <article class="card">
+            <h3>Tipos y ejemplos</h3>
+            <p>Las fronteras argentinas incluyen límites naturales (cordillera de los Andes, ríos) y convencionales fijadas por tratados. Con Chile predominan los pasos cordilleranos; con Paraguay y Brasil los ríos (Paraná, Uruguay) definen tramos importantes.</p>
+          </article>
+          <article class="card">
+            <h3>Gestión y desafíos</h3>
+            <p>La gestión fronteriza involucra control migratorio, aduanas, infraestructura y cooperación transfronteriza para el comercio y la protección ambiental. Retos: tráfico, conservación de ecosistemas y coordinación binacional.</p>
+          </article>
+          <article class="card">
+            <h3>Video Fronteras</h3>
+            <div class="video yt-preview" data-id="hKNYkGHSILM"></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="gemelas" class="section">
+      <div class="container">
+        <h2>Ciudades Gemelas</h2>
+        <div class="card-grid">
+          <article class="card">
+            <h3>Definición y dinámicas</h3>
+            <p>Las ciudades gemelas son conjuntos urbanos situados en países diferentes pero con interdependencia cotidiana: comercio, trabajos transfronterizos y redes familiares. Facilitan el intercambio cultural y económico en zonas fronterizas.</p>
+          </article>
+          <article class="card">
+            <h3>Casos relevantes</h3>
+            <p>Ejemplos: La Quiaca (AR) – Villazón (BO); Posadas (AR) – Encarnación (PY); Paso de los Libres (AR) – Uruguaiana (BR). En cada caso hay flujo comercial diario, transporte público transfronterizo y desafíos de infraestructura.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+    <section id="globalizacion" class="section">
+      <div class="container">
+        <h2>Globalización</h2>
+        <div class="card-grid">
+          <article class="card"><h3>Definición</h3><p>Proceso de integración económica, tecnológica y cultural que intensifica interconexiones entre países, mercados y personas.</p></article>
+          <article class="card"><h3>Impactos</h3><p>Favorece comercio y difusión tecnológica, pero plantea desafíos de desigualdad, dependencia y regulación internacional.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="neoliberal" class="section">
+      <div class="container">
+        <h2>Modelo Neoliberal</h2>
+        <div class="card-grid">
+          <article class="card"><h3>Principios</h3><p>Énfasis en apertura comercial, desregulación y rol central del mercado; reducción del Estado en producción directa.</p></article>
+          <article class="card"><h3>Debate</h3><p>Promueve eficiencia y atracción de inversiones, pero puede generar ajuste social y vulnerabilidad ante shocks externos.</p></article>
+          <article class="card">
+            <h3>Video Neoliberalismo</h3>
+            <div class="video yt-preview" data-id="JvHeldCxVG0"></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="mercosur" class="section">
+      <div class="container">
+        <h2>MERCOSUR</h2>
+        <div class="card-grid">
+          <article class="card"><h3>Qué es</h3><p>Bloque regional creado en 1991 para integrar economías de Argentina, Brasil, Paraguay y Uruguay; Bolivia en proceso de adhesión.</p></article>
+          <article class="card"><h3>Objetivos</h3><p>Arancel externo común, libre circulación de bienes y coordinación de políticas para fortalecer el comercio intrarregional.</p></article>
+          <article class="card"><h3>Video MERCOSUR</h3><div class="video yt-preview" data-id="ULYFk9llO9k"></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="onu" class="section">
+      <div class="container">
+        <h2>ONU</h2>
+        <div class="card-grid">
+          <article class="card"><h3>Rol</h3><p>Organización internacional fundada en 1945 para mantener la paz, promover derechos humanos y cooperación para el desarrollo.</p></article>
+          <article class="card"><h3>Ámbitos</h3><p>Consejo de Seguridad, Asamblea General, agencias como UNESCO y OMS; programas de asistencia y marcos normativos globales.</p></article>
+          <article class="card"><h3>Video ONU</h3><div class="video yt-preview" data-id="OK_8zOAJJPE"></div></article>
+        </div>
+      </div>
+    </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; <span id="year">2025</span> Planeta — Geografía Argentina</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@2.1.5/dist/tesseract.min.js"></script>
+  <script>
+    document.getElementById('year').textContent=new Date().getFullYear()
+    const io=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in-view')})},{threshold:.15});document.querySelectorAll('.card').forEach(c=>io.observe(c))
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{const id=a.getAttribute('href').slice(1);const t=document.getElementById(id);if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'})}})})
+    const planet=document.querySelector('.planet');if(planet){planet.addEventListener('click',()=>{const t=document.getElementById('bicontinental');if(t){t.scrollIntoView({behavior:'smooth',block:'start'});location.hash='#bicontinental'}})}
+    document.querySelectorAll('.orb-btn').forEach(btn=>{btn.addEventListener('click',e=>{const id=btn.getAttribute('href').slice(1);const t=document.getElementById(id);if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});location.hash='#'+id}})})
+    async function listImages(dir){try{const res=await fetch(dir);if(!res.ok)return[];const html=await res.text();const doc=new DOMParser().parseFromString(html,'text/html');return Array.from(doc.querySelectorAll('a')).map(a=>a.getAttribute('href')).filter(h=>h&&/(\.png|\.jpg|\.jpeg)$/i.test(h)).map(h=>h.startsWith(dir)?h:dir+(h.startsWith('/')?h.slice(1):h))}catch{return[]}}
+    async function ocrWhatsApp(){const grid=document.querySelector('#bicontinental .card-grid');if(!grid)return;const imgs=await listImages('assets/whatsapp/');const take=imgs.slice(0,2);if(take.length===0){return}for(const src of take){try{const result=await Tesseract.recognize(src,'eng+spa');const text=(result&&result.data&&result.data.text||'').trim();if(text){const card=document.createElement('article');card.className='card in-view';const h=document.createElement('h3');h.textContent='Texto extraído';const p=document.createElement('p');p.textContent=text;card.appendChild(h);card.appendChild(p);grid.appendChild(card)}}catch{}}}
+    ocrWhatsApp()
+    document.querySelectorAll('.yt-preview').forEach(el=>{const id=el.getAttribute('data-id');if(!id)return;el.style.backgroundImage=`url(https://i.ytimg.com/vi/${id}/hqdefault.jpg)`;el.addEventListener('click',()=>{const i=document.createElement('iframe');i.src=`https://www.youtube.com/embed/${id}?autoplay=1`;i.setAttribute('allow','accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');i.setAttribute('loading','lazy');i.allowFullscreen=true;i.style.position='absolute';i.style.inset='0';i.style.width='100%';i.style.height='100%';i.style.border='0';el.innerHTML='';el.appendChild(i);el.classList.remove('yt-preview')})})
+  </script>
+</body>
+</html>
