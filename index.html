@@ -23,12 +23,12 @@
     .hero-content{max-width:940px;margin:0 auto;background:linear-gradient(180deg,rgba(255,255,255,.06),transparent);padding:2rem;border-radius:16px;box-shadow:0 10px 40px rgba(0,0,0,.5)}
     .hero h2{margin:0 0 .5rem;font-size:1.8rem;color:var(--text);position:relative;z-index:5}
     .hero p{margin:0 0 1rem;color:var(--muted)}
-    .planet-wrap{position:relative;width:420px;height:420px;margin:1rem auto 1.5rem}
+    .planet-wrap{position:relative;--size:clamp(320px,42vw,520px);--radius:calc(var(--size)/2 - 20px);width:var(--size);height:var(--size);margin:1rem auto 1.5rem}
     .planet{position:absolute;inset:0;border-radius:50%;overflow:hidden;background:url('tierra-fondo.PNG') center/contain no-repeat;filter:drop-shadow(0 0 24px #22c55e);animation:spin 60s linear infinite;z-index:4}
     @keyframes spin{to{transform:rotate(360deg)}}
     .orbit{position:absolute;border-radius:50%;left:50%;top:50%;transform:translate(-50%,-50%);display:grid;place-items:center;animation:orbit 30s linear infinite;z-index:6}
-    .orbit-track{width:420px;height:420px}
-    @keyframes trail{from{transform:translate(-50%,-50%) rotate(0deg) translateY(-230px)}to{transform:translate(-50%,-50%) rotate(360deg) translateY(-230px)}}
+    .orbit-track{width:var(--size);height:var(--size)}
+    @keyframes trail{from{transform:translate(-50%,-50%) rotate(0deg) translateY(calc(-1 * var(--radius)))}to{transform:translate(-50%,-50%) rotate(360deg) translateY(calc(-1 * var(--radius)))}}
     .orb-btn{position:absolute;top:50%;left:50%;display:inline-flex;align-items:center;gap:.25rem;padding:.3rem .55rem;border-radius:999px;border:1px solid var(--edge);background:linear-gradient(180deg,rgba(8,29,36,.9),rgba(8,29,36,.6));color:var(--text);box-shadow:0 8px 26px rgba(0,0,0,.45);pointer-events:auto;z-index:7;animation:trail 24s linear infinite;white-space:nowrap;font-size:.85rem}
     .orb-btn:hover{box-shadow:0 12px 30px rgba(0,0,0,.55)}
     .orbit-track .orb-btn:nth-child(1){animation-delay:0s}
@@ -57,9 +57,9 @@
     .yt-preview{position:relative;padding-top:56.25%;border-radius:12px;overflow:hidden;border:1px solid var(--edge);background:#000;cursor:pointer;background-size:cover;background-position:center}
     .yt-preview::after{content:'▶';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:40px;color:#fff;background:rgba(0,0,0,.5);border-radius:50%;padding:.4rem .7rem;box-shadow:0 6px 18px rgba(0,0,0,.45)}
     footer{padding:1rem;text-align:center;color:var(--muted);border-top:1px solid var(--edge)}
-    @media(max-width:900px){.card-grid{grid-template-columns:1fr}.nav-links{display:none}.planet-wrap{width:340px;height:340px}.orbit-track{width:340px;height:340px}@keyframes trailM{from{transform:translate(-50%,-50%) rotate(0deg) translateY(-190px)}to{transform:translate(-50%,-50%) rotate(360deg) translateY(-190px)}}.orbit-track .orb-btn{animation:trailM 24s linear infinite}}
-    @media(max-width:480px){.planet-wrap{width:280px;height:280px}.orbit-track{width:280px;height:280px}@keyframes trailS{from{transform:translate(-50%,-50%) rotate(0deg) translateY(-155px)}to{transform:translate(-50%,-50%) rotate(360deg) translateY(-155px)}}.orbit-track .orb-btn{animation:trailS 24s linear infinite;font-size:.8rem;padding:.28rem .5rem}}
-    @media(max-width:360px){.planet-wrap{width:240px;height:240px}.orbit-track{width:240px;height:240px}@keyframes trailXS{from{transform:translate(-50%,-50%) rotate(0deg) translateY(-130px)}to{transform:translate(-50%,-50%) rotate(360deg) translateY(-130px)}}.orbit-track .orb-btn{animation:trailXS 24s linear infinite;font-size:.78rem;padding:.26rem .45rem}}
+    @media(max-width:900px){.card-grid{grid-template-columns:1fr}.nav-links{display:none}.planet-wrap{--size:clamp(300px,60vw,440px)}}
+    @media(max-width:480px){.planet-wrap{--size:clamp(240px,78vw,360px)}.orb-btn{font-size:.8rem;padding:.28rem .5rem}}
+    @media(max-width:360px){.planet-wrap{--size:clamp(220px,84vw,300px)}.orb-btn{font-size:.78rem;padding:.26rem .45rem}}
   </style>
 </head>
 <body>
