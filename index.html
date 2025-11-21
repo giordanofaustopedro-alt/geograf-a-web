@@ -25,7 +25,7 @@
     .hero p{margin:0 0 1rem;color:var(--muted)}
     .planet-wrap{position:relative;--size:clamp(320px,42vw,520px);--radius:calc(var(--size)/2 - 20px);width:var(--size);height:var(--size);margin:1rem auto 1.5rem}
     .planet{position:absolute;inset:0;border-radius:50%;overflow:hidden;background:url('tierra-fondo.png') center/contain no-repeat;filter:drop-shadow(0 0 24px #22c55e);animation:spin 60s linear infinite;z-index:4}
-    @keyframes spin{to{transform:rotate(360deg)}}
+    @keyframes spin{to{transform:rotate(-360deg)}}
     .orbit{position:absolute;border-radius:50%;left:50%;top:50%;transform:translate(-50%,-50%);display:grid;place-items:center;animation:orbit 30s linear infinite;z-index:6}
     .orbit-track{width:var(--size);height:var(--size)}
     @keyframes trail{from{transform:translate(-50%,-50%) rotate(0deg) translateY(calc(-1 * var(--radius)))}to{transform:translate(-50%,-50%) rotate(360deg) translateY(calc(-1 * var(--radius)))}}
@@ -44,7 +44,7 @@
     .cta-row{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem;margin-top:1rem}
     .cta{display:inline-block;background:#118ab2;color:#fff;padding:.6rem 1rem;border-radius:12px;font-weight:700;border:1px solid var(--edge)}
     .container{max-width:1100px;margin:0 auto;padding:0 1rem}
-    .section{padding:2.5rem 0}
+    .section{padding:2.5rem 0;scroll-margin-top:100px}
     .section h2{font-size:1.6rem;margin:0 0 .75rem;color:var(--teal)}
     .section p{color:var(--muted)}
     .card-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;margin-top:1rem}
