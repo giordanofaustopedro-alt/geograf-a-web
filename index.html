@@ -8,7 +8,7 @@
   <style>
     :root{--space:#0b5d44;--space2:#12815b;--text:#e6fff6;--muted:#cff7df;--blue:#0ea5e9;--green:#22c55e;--teal:#2dd4bf;--card:#0f3f2f;--edge:rgba(255,255,255,0.12)}
     *{box-sizing:border-box}
-    html{scroll-behavior:smooth;scroll-padding-top:120px}
+    html{scroll-behavior:smooth;scroll-padding-top:150px}
     body{margin:0;font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial;color:var(--text);background:linear-gradient(180deg,var(--space),var(--space2));line-height:1.6}
     a{text-decoration:none;color:var(--teal)}
     .header{position:sticky;top:0;z-index:40;background:rgba(5,19,26,.6);backdrop-filter:blur(8px);border-bottom:1px solid var(--edge)}
@@ -25,7 +25,7 @@
     .hero p{margin:0 0 1rem;color:var(--muted)}
     .planet-wrap{position:relative;--size:clamp(320px,42vw,520px);--radius:calc(var(--size)/2 - 20px);width:var(--size);height:var(--size);margin:1rem auto 1.5rem}
     .planet{position:absolute;inset:0;border-radius:50%;overflow:hidden;background:url('tierra-fondo.png') center/contain no-repeat;filter:drop-shadow(0 0 24px #22c55e);animation:spin 60s linear infinite;z-index:4;transform-origin:50% 50%}
-    @keyframes spin{to{transform:rotate(-360deg)}}
+    @keyframes spin{to{transform:rotate(360deg)}}
     .orbit{position:absolute;border-radius:50%;left:50%;top:50%;transform:translate(-50%,-50%);display:grid;place-items:center;animation:orbit 30s linear infinite;z-index:6}
     .orbit-track{width:var(--size);height:var(--size)}
     @keyframes trail{from{transform:translate(-50%,-50%) rotate(0deg) translateY(calc(-1 * var(--radius)))}to{transform:translate(-50%,-50%) rotate(360deg) translateY(calc(-1 * var(--radius)))}}
